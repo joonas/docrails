@@ -289,6 +289,16 @@ a, a:link, a:visited {
 
 #mainCol a, #subCol a, #feature a {color: #980905;}
 #mainCol a code, #subCol a code, #feature a code {color: #980905;}
+#mainCol h3 .anchor, #mainCol h4 .anchor, #mainCol h5 .anchor, #mainCol h6 .anchor {
+  display: none;
+}
+
+#mainCol h3:hover .anchor, #mainCol h4:hover .anchor, #mainCol h5:hover .anchor, #mainCol h6:hover .anchor { display: inline; }
+#mainCol .anchor {
+  font-size: 12px;
+  line-height: 1em;
+  text-decoration: none;
+}
 
 /* Navigation
 --------------------------------------- */

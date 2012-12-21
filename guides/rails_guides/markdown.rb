@@ -95,8 +95,9 @@ module RailsGuides
                   hierarchy = hierarchy[0, 3] + [node]
                 end
 
-                node[:id] = dom_id(hierarchy)
-                node.inner_html = "#{node_index(hierarchy)} #{node.inner_html}"
+                node_dom_id = dom_id(hierarchy)
+                node[:id] = node_dom_id
+                node.inner_html = "#{node_index(hierarchy)} #{node.inner_html} #{anchor_for_node(node_dom_id)}"
               end
             end
           end.to_html
@@ -149,6 +150,10 @@ module RailsGuides
         when 4
           "#{@index_counter[1]}.#{@index_counter[2]}.#{@index_counter[3]}.#{@index_counter[4] += 1}"
         end
+      end
+
+      def anchor_for_node(node_id)
+        %(<a href="##{node_id}" class="anchor">&para;</a>)
       end
 
       def render_page
